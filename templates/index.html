@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Declaration</title>
+    <link href="../static/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Medical declaration</h1>
+        <form action="{{url_for('success')}}" method="post">
+
+            <label for="name" class="labelInfo">Name</label>
+            <input placeholder="Name*" type="text" name="name" required class="info"><br>
+
+            <label for="email" class="labelInfo">Email</label>
+            <input placeholder="Email*" type="email" name="email" required class="info"><br>
+
+            <label for="phone" class="labelInfo">Phone number</label>
+            <input placeholder="Phone number*" type="text" name="phone" class="info" required><br>
+
+            <label for="year" class="labelInfo">Year of Birth</label>
+            <select id="year" name="year" required>
+                <option disabled selected value="">--select year--</option>
+                <script type="text/javascript">
+                     var date = new Date();
+                     var year = date.getFullYear();
+                     for(var i=year; i>=year-100; i--){
+                        var select = document.getElementById("year");
+                        var option = document.createElement("OPTION");
+                        select.options.add(option);
+                        option.text = i;
+                        option.value = i;
+                     }
+                 </script>
+            </select><br>
+
+            <label class="labelInfo">Gender</label>
+            <div class="radioLeft">
+                <input type="radio" id="male" name="gender" value="0" checked>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="1">
+                <label for="female">Female</label>
+            </div><br>
+
+            <label for="vehicle" class="labelInfo">Vehicle type</label>
+            <select name="vehicle" required>
+                <option disabled selected value="">--select vehicle type--</option>
+                <option value="0">Plane</option>
+                <option value="1">Train</option>
+                <option value="2">Passenger car</option>
+                <option value="3">Private vehicle</option>
+            </select><br>
+
+            <label for="number" class="labelInfo">Vehicle number</label>
+            <input type="text" placeholder="Vehicle number*" class="info" name="number" required><br>
+
+            <label for="departure" class="labelInfo">Departure</label>
+            <select name="departure" required>
+                <option disabled selected value="">--select departure city--</option>
+                <option value="0">Ha Noi</option>
+                <option value="1">Ho Chi Minh City</option>
+                <option value="2">Da Nang</option>
+            </select><br>
+
+            <label for="destination" class="labelInfo">Destination</label>
+            <select name="destination" required>
+                <option disabled selected value="">--select destination city--</option>
+                <option value="0">Ha Noi</option>
+                <option value="1">Ho Chi Minh City</option>
+                <option value="2">Da Nang</option>
+            </select><br>
+
+            <label for="fromDay" class="labelInfo">Departure day</label>
+            <input type="date" placeholder="Departure day" name="fromDay" required class="info"><br>
+
+            <label for="toDay" class="labelInfo">Destination day</label>
+            <input type="date" placeholder="Destination day" name="toDay" required class="info"><br>
+
+            <span>In the past 21 days, have you noticed any of the following symptoms?</span>
+            <table class="formTable">
+                <thead>
+                    <tr>
+                        <th>Symptom</th>
+                        <th class="radioColumn">Yes</th>
+                        <th class="radioColumn">No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="symptom">Fever</td>
+                        <td>
+                            <input type="radio" name="fever" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="fever" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Cough</td>
+                        <td>
+                            <input type="radio" name="cough" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="cough" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Stifling</td>
+                        <td>
+                            <input type="radio" name="stifling" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="stifling" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Pneumonia</td>
+                        <td>
+                            <input type="radio" name="pneumonia" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="pneumonia" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Sore throat</td>
+                        <td>
+                            <input type="radio" name="throat" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="throat" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Tired</td>
+                        <td>
+                            <input type="radio" name="tired" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="tired" value="0" checked>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span>Within the past 21 days, you have been exposed with</span>
+            <table class="formTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="radioColumn">Yes</th>
+                        <th class="radioColumn">No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="symptom">Patient or suspected of having Covid-19</td>
+                        <td>
+                            <input type="radio" name="in_contact_1" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="in_contact_1" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">People from countries with Covid-19 disease</td>
+                        <td>
+                            <input type="radio" name="in_contact_2" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="in_contact_2" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Symptomatic people (fever, cough, difficulty breathing, pneumonia)</td>
+                        <td>
+                            <input type="radio" name="in_contact_3" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="in_contact_3" value="0" checked>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span>Which of the following diseases do you currently have?</span>
+            <table class="formTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="radioColumn">Yes</th>
+                        <th class="radioColumn">No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="symptom">Chronic liver disease</td>
+                        <td>
+                            <input type="radio" name="liver" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="liver" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Chronic blood disease</td>
+                        <td>
+                            <input type="radio" name="blood" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="blood" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Chronic lung disease</td>
+                        <td>
+                            <input type="radio" name="lung" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="lung" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Chronic kidney disease</td>
+                        <td>
+                            <input type="radio" name="kidney" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="kidney" value="0" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="symptom">Cancer</td>
+                        <td>
+                            <input type="radio" name="cancer" value="1">
+                        </td>
+                        <td>
+                            <input type="radio" name="cancer" value="0" checked>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="submit_login">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

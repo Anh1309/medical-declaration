@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="../static/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Administration</h1>
+        <form action="{{url_for('success')}}" method="post" id="search">
+            <label for="fromDate" class="labelSearch">From:</label>
+            <input type="date" name="fromDate" class="search">
+            <label for="toDate" class="labelSearch">To:</label>
+            <input type="date" name="toDate" class="search">
+            <label for="departure" class="labelSearch">Departure:</label>
+            <input type="text" name="departure" class="search">
+            <label for="destination" class="labelSearch">Destination:</label>
+            <input type="text" name="destination" class="search"><br>
+            <label for="vehicle" class="labelSearch">Vehicle type:</label>
+            <select name="vehicle" class="search" id="selectSearch">
+                <option disabled selected>--select vehicle type--</option>
+                <option value="plane">Plane</option>
+                <option value="train">Train</option>
+                <option value="passenger">Passenger car</option>
+                <option value="private">Private vehicle</option>
+            </select>
+            <label for="number" class="labelSearch">Vehicle number:</label>
+            <input type="text" name="number" class="search">
+            <button type="submit" id="submit_search">Search</button>
+        </form>
+    </div>
+
+</body>
+</html>

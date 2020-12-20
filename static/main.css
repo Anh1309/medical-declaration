@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #006666;
+    text-align: center;
+    overflow: hidden;
+    color: #ffffff;
+    display: block;
+    overflow: scroll;
+}
+
+.container h1 {
+    margin-top: 80px;
+    font-size: 50px;
+}
+
+.container form {
+    margin: 50px;
+    display: block;
+}
+
+.container .info {
+    width: 350px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container select {
+    width: 376px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container button {
+    width: 100px;
+    padding: 5px;
+    margin-top: 30px;
+    background-color: steelblue
+}
+
+.container input[name="gender"] {
+    width: 30px;
+}
+.container .radioLeft {
+    display: inline-block;
+    text-align: left;
+    width: 394px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.container .search {
+    width: 160px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.container #selectSearch {
+    width: 174px;
+}
+
+#search {
+    text-align: left;
+}
+
+.labelSearch {
+    width: 150px;
+    display: inline-block;
+    text-align: right;
+}
+
+.labelInfo {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+}
+
+.formTable, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+.formTable {
+    width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.symptom {
+    text-align: left;
+}
+
+.radioColumn {
+    width: 30px;
+}
