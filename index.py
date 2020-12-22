@@ -82,9 +82,7 @@ def success():
             "cancer": cancer,
         }
 
-        html = json2html.convert(json=obj)
-        print(html)
-        img = qrcode.make('http://127.0.0.1:5000/')
+        img = qrcode.make(obj)
         img.save('qr.png')
         send_email(email)
         cursor = con.cursor()
